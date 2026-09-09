@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  LA MIF — design system                                            */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Palette officielle */
+  --color-cream: #f3ebdd;
+  --color-vermillon: #e34234;
+  --color-bordeaux: #541c25;
+  --color-charbon: #171717;
+  --color-jaune: #f4b942;
+
+  /* Nuances utilitaires dérivées */
+  --color-cream-dim: #e7dcc8;
+  --color-vermillon-deep: #c5311f;
+
+  /* Typographies (injectées par next/font dans le layout) */
+  --font-display: var(--font-anton), "Arial Narrow", system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Rythme */
+  --section-pad: clamp(4.5rem, 12vw, 9rem);
+}
+
+:root {
+  color-scheme: dark;
+  --header-h: 4.25rem;
+}
+
+* {
+  min-width: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  background: var(--color-charbon);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-vermillon);
+  color: var(--color-cream);
+}
+
+/* Focus visible cohérent sur toute la page */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Titres display : compacts, expressifs */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Animations sobres                                                 */
+/* ------------------------------------------------------------------ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 26s linear infinite;
+}
+
+/* Carrousels : masquer la scrollbar sans casser le scroll */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sans JavaScript : rien ne doit rester masqué */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
