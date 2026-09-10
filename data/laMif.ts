@@ -109,7 +109,7 @@ export const brand = {
 /* ================================================================== */
 
 export const keyFigures: KeyFigure[] = [
-  { value: "+15", label: "soirées organisées en 3 ans" },
+  { value: "+20", label: "soirées organisées en 3 ans" },
   { value: "+5 000", label: "participants réunis" },
   { value: "25+", label: "cœur de cible" },
 ];
@@ -236,11 +236,26 @@ export const heroVideo = {
 
 /* ================================================================== */
 /*  06 bis — ILS NOUS ONT FAIT CONFIANCE                               */
-/*  Uniquement les lieux réellement validés. Ne rien ajouter sans      */
-/*  confirmation (pas de dates, pas de nombre d'éditions, pas de logo).*/
+/*  Uniquement les lieux réellement validés, avec un détail confirmé   */
+/*  (nombre d'éditions, temps fort, période). Ne rien ajouter sans     */
+/*  confirmation.                                                      */
 /* ================================================================== */
 
-export const venues: string[] = ["Nakama", "Velvet Bar", "Bateau Phare"];
+export type Venue = {
+  name: string;
+  /** Détail court et confirmé : nombre d'éditions, temps fort, période. */
+  detail: string;
+};
+
+export const venues: Venue[] = [
+  {
+    name: "Nakama",
+    detail:
+      "Plus d'une quinzaine d'éditions — un rendez-vous mensuel de 2023 à 2025",
+  },
+  { name: "Velvet Bar", detail: "Fête de la Musique 2024, 2025 & 2026" },
+  { name: "Bateau Phare", detail: "4 éditions estivales" },
+];
 
 /* ================================================================== */
 /*  08 — LA MIF × VOUS  (pistes de collaboration B2B)                  */
@@ -272,6 +287,11 @@ export const collaborations: Collaboration[] = [
     id: "evenements",
     title: "Événements",
     text: "Adapter l'expérience La Mif à une programmation ou un événement existant.",
+  },
+  {
+    id: "collaboration",
+    title: "Collaboration",
+    text: "Co-produire un événement pour créer des expériences uniques et mutualiser les communautés.",
   },
 ];
 

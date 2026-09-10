@@ -120,7 +120,17 @@ export default function Contact() {
           <span>
             {brand.name} — {brand.place} · depuis {brand.since}
           </span>
-          <span>Presskit</span>
+          <span>
+            Powered by{" "}
+            <a
+              href="https://presskit.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream transition-opacity hover:opacity-70"
+            >
+              presskit.fr
+            </a>
+          </span>
         </div>
       </footer>
     </section>
