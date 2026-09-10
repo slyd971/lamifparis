@@ -19,7 +19,7 @@ const inter = Inter({
 
 const SITE_TITLE = "La Mif Paris — La soirée appart en beaucoup plus grand";
 const SITE_DESCRIPTION =
-  "La Mif réinvente la soirée entre potes à grande échelle : jeux, karaoké, live artistes et DJ sets pour une communauté de plus de 25 ans.";
+  "La Mif, la soirée entre potes à grande échelle : jeux, karaoké, lives et DJ sets pour une communauté 25+. Plus de 20 soirées et 5 000 participants depuis 2023.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,11 +33,19 @@ export const metadata: Metadata = {
     "LA MIF",
     "La Mif Paris",
     "soirée appart",
-    "événement",
+    "concept soirée",
+    "soirée entre potes",
+    "soirée jeux de société",
+    "karaoké Paris",
+    "DJ set Paris",
+    "live artistes",
+    "Fête de la Musique",
+    "afterwork Paris",
+    "soirée 25 ans et plus",
+    "événementiel",
+    "activation de marque",
     "communauté",
     "presskit",
-    "karaoké",
-    "concept soirée",
     "Paris",
   ],
   alternates: {
@@ -88,6 +96,16 @@ const jsonLd = {
     addressLocality: brand.place,
     addressCountry: "FR",
   },
+  keywords:
+    "soirée entre potes, jeux de société, karaoké, live artistes, DJ sets, communauté 25+, Paris",
+  knowsAbout: [
+    "Soirées communautaires",
+    "Karaoké",
+    "DJ sets",
+    "Jeux de société",
+    "Programmation artistique",
+    "Événementiel",
+  ],
   email: socialLinks.email || undefined,
   sameAs: [socialLinks.instagram].filter(Boolean),
 };
