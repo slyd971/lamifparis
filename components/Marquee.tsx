@@ -1,12 +1,19 @@
 type MarqueeProps = {
   text: string;
   className?: string;
+  /** Classe couleur du séparateur ✱ (par défaut : jaune). */
+  markClassName?: string;
   /** Nombre de répétitions par piste (la piste est dupliquée pour la boucle). */
   repeat?: number;
 };
 
 /** Bandeau défilant en CSS pur. Figé si `prefers-reduced-motion`. */
-export default function Marquee({ text, className = "", repeat = 4 }: MarqueeProps) {
+export default function Marquee({
+  text,
+  className = "",
+  markClassName = "text-jaune",
+  repeat = 4,
+}: MarqueeProps) {
   const items = Array.from({ length: repeat });
   return (
     <div
@@ -18,7 +25,7 @@ export default function Marquee({ text, className = "", repeat = 4 }: MarqueePro
           {items.map((_, i) => (
             <span key={i} className="display px-6 text-[clamp(1.5rem,4vw,3rem)]">
               {text}
-              <span className="px-6 text-jaune">✱</span>
+              <span className={`px-6 ${markClassName}`}>✱</span>
             </span>
           ))}
         </div>

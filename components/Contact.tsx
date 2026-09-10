@@ -19,7 +19,8 @@ export default function Contact() {
     >
       <Marquee
         text={brand.slogan}
-        className="bg-vermillon py-4 text-cream"
+        className="bg-jaune py-4 text-charbon"
+        markClassName="text-framboise"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
