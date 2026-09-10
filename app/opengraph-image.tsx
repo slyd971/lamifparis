@@ -33,8 +33,11 @@ export default function OpengraphImage() {
           alignItems: "center",
           justifyContent: "center",
           gap: 40,
+          // Dégradé aligné sur la DA : framboise → berry sombre → charbon.
+          // (cf. app/globals.css @theme — valeurs codées en dur, next/og
+          //  n'accède pas aux custom properties CSS.)
           background:
-            "linear-gradient(135deg, #541C25 0%, #3a131a 55%, #171717 100%)",
+            "linear-gradient(135deg, #B31942 0%, #6D1329 48%, #171717 100%)",
           color: "#F3EBDD",
           fontFamily: "sans-serif",
           padding: "72px 80px",
@@ -76,7 +79,7 @@ export default function OpengraphImage() {
             fontSize: 30,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#F4B942",
+            color: "#FFD24D",
             textAlign: "center",
             display: "flex",
           }}
