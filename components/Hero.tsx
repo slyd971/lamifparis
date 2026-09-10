@@ -34,12 +34,25 @@ export default function Hero() {
 
     const tryPlay = () => void video.play().catch(() => undefined);
 
+    // La vidéo se termine par un cartouche logo + fondu au noir (~49,5 s).
+    // On reboucle avant pour ne montrer que le plateau.
+    const LOOP_BEFORE = 48.7;
+    const onTimeUpdate = () => {
+      if (video.currentTime >= LOOP_BEFORE) {
+        video.currentTime = 0;
+      }
+    };
+
     // `load()` force le démarrage du téléchargement (utile avec preload bas),
     // puis on tente la lecture dès que possible + au cas où via `canplay`.
     video.load();
     tryPlay();
     video.addEventListener("canplay", tryPlay);
-    return () => video.removeEventListener("canplay", tryPlay);
+    video.addEventListener("timeupdate", onTimeUpdate);
+    return () => {
+      video.removeEventListener("canplay", tryPlay);
+      video.removeEventListener("timeupdate", onTimeUpdate);
+    };
   }, [enableVideo]);
 
   return (
@@ -94,7 +107,7 @@ export default function Hero() {
 
         {/* Le nom "LA MIF" est déjà affiché juste au-dessus (h1) — on n'en
             garde que le reste ici pour éviter la répétition. */}
-        <p className="display text-[10vw] leading-[0.95] text-corail sm:text-[7vw] lg:text-[5.5rem]">
+        <p className="display text-[10vw] leading-[0.95] text-jaune sm:text-[7vw] lg:text-[5.5rem]">
           {brand.slogan.replace(brand.name, "").trim()}
         </p>
 
@@ -110,7 +123,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#contact"
-            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-corail"
+            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune"
           >
             {contact.cta}
           </a>
