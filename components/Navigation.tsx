@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { brand, navLinks } from "@/data/laMif";
 
@@ -45,11 +46,16 @@ export default function Navigation() {
       >
         <Link
           href="/"
-          className="display text-xl leading-none tracking-tight sm:text-2xl"
+          aria-label={`${brand.name} — accueil`}
+          className="inline-flex items-center"
           onClick={() => setOpen(false)}
         >
-          {brand.name}
-          <span className="text-vermillon">.</span>
+          <Image
+            src={brand.logo}
+            alt={brand.name}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         <ul className="hidden items-center gap-8 text-sm font-medium uppercase tracking-[0.14em] md:flex">

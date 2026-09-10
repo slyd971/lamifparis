@@ -50,7 +50,9 @@ app/
   layout.tsx        Fonts (Anton + Inter), <head>, métadonnées, OpenGraph
   page.tsx          Assemble toutes les sections dans l'ordre
   globals.css       Design system : palette, typo, animations, reduced-motion
-  icon.svg          Favicon
+  icon.png          Favicon / icône (logo LA MIF sur pastille vermillon)
+  favicon.ico       Favicon multi-tailles (16/32/48/64)
+  apple-icon.png    Icône iOS 180×180
   galerie/page.tsx  Page /galerie — album complet (galleryFull), pas de crop
 components/
   Navigation.tsx    Nav sticky minimale + menu mobile

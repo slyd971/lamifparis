@@ -16,7 +16,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 // Lu une seule fois, au chargement du module (pas de dépendance à la requête).
-const logo = await readFile(join(process.cwd(), "assets/logo/logo-la-mif.png"));
+const logo = await readFile(
+  join(process.cwd(), "assets/logo/logo-la-mif-mark.png"),
+);
 const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
 export default function OpengraphImage() {
@@ -67,7 +69,7 @@ export default function OpengraphImage() {
         </div>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} alt="" width={460} />
+        <img src={logoSrc} alt="" width={360} />
 
         <div
           style={{

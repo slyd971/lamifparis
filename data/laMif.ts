@@ -17,7 +17,7 @@ import g14 from "@/assets/gallery/gallery-mif14.jpg";
 import g15 from "@/assets/gallery/gallery-mif15.jpg";
 import conceptBio from "@/assets/gallery/concept-bio.jpg";
 import contactTeam from "@/assets/contact/team.jpg";
-import logoLaMif from "@/assets/logo/logo-la-mif.png";
+import logoLaMif from "@/assets/logo/logo-la-mif-mark.png";
 
 /* ================================================================== */
 /*  TYPES                                                              */
@@ -97,7 +97,8 @@ export const brand = {
   slogan: "LA MIF C'EST ÇA",
   intro:
     "Un concept de soirée pensé pour les plus de 25 ans : l'esprit d'une soirée appart, à l'échelle d'un véritable événement.",
-  /** Logo officiel (à afficher sur fond sombre). */
+  /** Logo officiel — wordmark « LA MIF' / PARIS » détouré (fond transparent,
+   *  à afficher sur fond sombre). Source brute : LOGO/LOGO LA MIF.png. */
   logo: logoLaMif,
 } as const;
 

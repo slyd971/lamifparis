@@ -76,7 +76,7 @@ const jsonLd = {
   name: brand.name,
   alternateName: "LA MIF Paris",
   url: SITE_URL,
-  logo: `${SITE_URL}/icon.svg`,
+  logo: `${SITE_URL}/icon.png`,
   image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   slogan: brand.slogan,
