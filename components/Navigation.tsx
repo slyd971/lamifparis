@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, navLinks, socialLinks } from "@/data/laMif";
+import InstagramMark from "@/components/InstagramMark";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -141,8 +142,9 @@ export default function Navigation() {
               href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-1 transition-colors hover:text-cream"
+              className="flex items-center gap-2 py-1 transition-colors hover:text-cream"
             >
+              <InstagramMark className="h-4 w-4" id="ig-mark-menu" />
               Instagram
             </a>
           )}

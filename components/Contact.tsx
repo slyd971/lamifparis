@@ -2,6 +2,7 @@ import Image from "next/image";
 import { brand, contact, socialLinks } from "@/data/laMif";
 import Reveal from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
+import InstagramMark from "@/components/InstagramMark";
 
 export default function Contact() {
   const emailHref = socialLinks.email ? `mailto:${socialLinks.email}` : undefined;
@@ -79,18 +80,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 border border-cream/60 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10 sm:inline-flex sm:w-auto sm:min-w-[10.5rem]"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4"
-                    aria-hidden="true"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4.2" />
-                    <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
-                  </svg>
+                  <InstagramMark className="h-[1.15rem] w-[1.15rem]" id="ig-mark-contact" />
                   Instagram
                 </a>
               )}
