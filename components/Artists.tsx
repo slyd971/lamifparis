@@ -43,7 +43,10 @@ export default function Artists() {
                     className="object-cover"
                   />
                 ) : (
-                  <span className="display absolute inset-0 flex items-center justify-center text-4xl opacity-20">
+                  <span
+                    aria-hidden="true"
+                    className="display absolute inset-0 flex items-center justify-center text-4xl opacity-20"
+                  >
                     {artist.name.slice(0, 1)}
                   </span>
                 )}

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { brand, galleryFull } from "@/data/laMif";
+import SkipLink from "@/components/SkipLink";
 import Navigation from "@/components/Navigation";
 import GalleryGrid from "@/components/GalleryGrid";
 import Contact from "@/components/Contact";
+import SiteFooter from "@/components/SiteFooter";
 
 const description = `${brand.name} — l'album complet des soirées : public, amis, jeux, micro, dancefloor.`;
 
@@ -35,14 +37,16 @@ export const metadata: Metadata = {
 export default function GaleriePage() {
   return (
     <>
+      <SkipLink />
+
       <Navigation />
 
-      <main>
+      <main id="contenu" tabIndex={-1}>
         <section className="bg-charbon text-cream">
           <div className="mx-auto max-w-[1500px] px-5 pb-10 pt-[calc(var(--header-h)+2.5rem)] sm:px-8 sm:pb-14">
             <Link
               href="/#galerie"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cream/60 transition-colors hover:text-cream"
+              className="inline-flex items-center gap-2 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cream/60 transition-colors hover:text-cream"
             >
               <span aria-hidden="true">←</span>
               Retour au presskit
@@ -63,14 +67,16 @@ export default function GaleriePage() {
           </div>
         </section>
 
-        <section className="bg-charbon text-cream">
+        <section aria-label="Photos" className="bg-charbon text-cream">
           <div className="mx-auto max-w-[1500px] px-5 pb-[var(--section-pad)] sm:px-8">
             <GalleryGrid items={galleryFull} columns="columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4" />
           </div>
         </section>
+
+        <Contact />
       </main>
 
-      <Contact />
+      <SiteFooter />
     </>
   );
 }

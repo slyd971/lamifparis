@@ -66,6 +66,13 @@ body {
   border-radius: 2px;
 }
 
+/* Cible du lien d'évitement : pas de halo sur tout le <main>
+   (le défilement + l'annonce du landmark suffisent comme retour). */
+main:focus,
+main:focus-visible {
+  outline: none;
+}
+
 /* Titres display : compacts, expressifs */
 .display {
   font-family: var(--font-display);

@@ -7,6 +7,8 @@ import { brand, contact, heroVideo, socialLinks } from "@/data/laMif";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [enableVideo, setEnableVideo] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     // Vidéo de fond activée par défaut, mobile comme desktop. On s'en passe
@@ -32,7 +34,10 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    const tryPlay = () => void video.play().catch(() => undefined);
+    const tryPlay = () => {
+      if (pausedRef.current) return;
+      void video.play().catch(() => undefined);
+    };
 
     // La vidéo se termine par un cartouche logo + fondu au noir (~49,5 s).
     // On reboucle avant pour ne montrer que le plateau.
@@ -54,6 +59,15 @@ export default function Hero() {
       video.removeEventListener("timeupdate", onTimeUpdate);
     };
   }, [enableVideo]);
+
+  // Bouton lecture / pause de la vidéo d'arrière-plan (WCAG 2.2.2).
+  useEffect(() => {
+    pausedRef.current = paused;
+    const video = videoRef.current;
+    if (!video || !enableVideo) return;
+    if (paused) video.pause();
+    else void video.play().catch(() => undefined);
+  }, [paused, enableVideo]);
 
   return (
     <section
@@ -153,7 +167,22 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 flex items-center justify-between border-t border-cream/20 px-5 py-4 text-xs uppercase tracking-[0.2em] sm:px-8">
-        <span className="text-cream/90">Presskit</span>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <span className="text-cream/90">Presskit</span>
+          {enableVideo && (
+            <button
+              type="button"
+              onClick={() => setPaused((p) => !p)}
+              className="inline-flex items-center gap-1.5 text-cream/70 transition-colors hover:text-cream"
+            >
+              <span aria-hidden="true" className="text-[0.9em] leading-none">
+                {paused ? "▶" : "❚❚"}
+              </span>
+              {paused ? "Lecture" : "Pause"}
+              <span className="sr-only"> de la vidéo d’arrière-plan</span>
+            </button>
+          )}
+        </div>
         <a
           href="#chiffres"
           className="group inline-flex items-center gap-2 transition-opacity hover:opacity-70"

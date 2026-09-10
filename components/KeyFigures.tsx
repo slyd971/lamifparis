@@ -5,12 +5,13 @@ export default function KeyFigures() {
   return (
     <section
       id="chiffres"
-      aria-label="Chiffres clés"
+      aria-labelledby="chiffres-title"
       className="bg-framboise text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
         <Reveal
           as="h2"
+          id="chiffres-title"
           className="display mb-12 text-[13vw] leading-[1.12] text-cream sm:mb-16 sm:text-[8vw] lg:text-7xl"
         >
           En 3 ans,
@@ -25,14 +26,16 @@ export default function KeyFigures() {
             <Reveal
               key={fig.label}
               delay={i * 90}
-              className="border-t-2 border-cream/25 pt-5"
+              className="flex flex-col-reverse gap-3 border-t-2 border-cream/25 pt-5"
             >
+              {/* DOM : terme (dt) puis définition (dd) ;
+                  affichage inversé via flex-col-reverse (valeur en tête). */}
+              <dt className="text-sm font-semibold uppercase tracking-[0.16em] text-jaune sm:text-base">
+                {fig.label}
+              </dt>
               <dd className="display text-[15vw] leading-[0.9] text-cream sm:text-[7vw] lg:text-[6.5rem]">
                 {fig.value}
               </dd>
-              <dt className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-jaune sm:text-base">
-                {fig.label}
-              </dt>
             </Reveal>
           ))}
         </dl>

@@ -71,6 +71,7 @@ export default function Contact() {
                     <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.41-1.42a9.87 9.87 0 0 0 4.63 1.18h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.15.26.1 1.68.79 1.97.94.29.15.48.22.55.34.07.13.07.75-.17 1.43Z" />
                   </svg>
                   WhatsApp
+                  <span className="sr-only"> (nouvel onglet)</span>
                 </a>
               )}
 
@@ -83,6 +84,7 @@ export default function Contact() {
                 >
                   <InstagramMark className="h-[1.15rem] w-[1.15rem]" id="ig-mark-contact" />
                   Instagram
+                  <span className="sr-only"> (nouvel onglet)</span>
                 </a>
               )}
             </Reveal>
@@ -105,25 +107,6 @@ export default function Contact() {
           </Reveal>
         </div>
       </div>
-
-      <footer className="border-t border-cream/20 px-5 py-8 text-xs uppercase tracking-[0.18em] text-cream/70 sm:px-8">
-        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
-          <span>
-            {brand.name} — {brand.place} · depuis {brand.since}
-          </span>
-          <span>
-            Powered by{" "}
-            <a
-              href="https://presskit.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cream transition-opacity hover:opacity-70"
-            >
-              presskit.fr
-            </a>
-          </span>
-        </div>
-      </footer>
     </section>
   );
 }

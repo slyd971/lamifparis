@@ -1,3 +1,4 @@
+import SkipLink from "@/components/SkipLink";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import KeyFigures from "@/components/KeyFigures";
@@ -10,20 +11,16 @@ import Gallery from "@/components/Gallery";
 import Collaborations from "@/components/Collaborations";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   return (
     <>
-      <a
-        href="#chiffres"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-charbon focus:px-4 focus:py-2 focus:text-cream"
-      >
-        Aller au contenu
-      </a>
+      <SkipLink />
 
       <Navigation />
 
-      <main>
+      <main id="contenu" tabIndex={-1}>
         <Hero />
         <KeyFigures />
         <Concept />
@@ -36,6 +33,8 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
+
+      <SiteFooter />
     </>
   );
 }

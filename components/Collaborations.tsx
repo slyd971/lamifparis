@@ -40,7 +40,7 @@ export default function Collaborations() {
               className="group grid grid-cols-1 gap-x-8 gap-y-2 border-b border-cream/15 py-7 sm:grid-cols-[0.9fr_1.1fr] sm:py-9"
             >
               <div className="flex items-baseline gap-4">
-                <span className="text-sm font-semibold text-jaune">
+                <span aria-hidden="true" className="text-sm font-semibold text-jaune">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="display text-3xl leading-none transition-colors duration-300 group-hover:text-jaune sm:text-4xl lg:text-5xl">
@@ -57,7 +57,7 @@ export default function Collaborations() {
         <Reveal className="mt-10">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-jaune transition-opacity hover:opacity-70"
+            className="group inline-flex items-center gap-2 py-2 text-sm font-semibold uppercase tracking-[0.14em] text-jaune transition-opacity hover:opacity-70"
           >
             {contact.cta}
             <span

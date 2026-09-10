@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, navLinks, socialLinks } from "@/data/laMif";
@@ -9,6 +9,8 @@ import InstagramMark from "@/components/InstagramMark";
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,13 +26,49 @@ export default function Navigation() {
     };
   }, [open]);
 
+  // Menu ouvert : dialogue modale — focus dans le panneau, piège au clavier,
+  // Échap ferme.
   useEffect(() => {
     if (!open) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const focusables = () =>
+      Array.from(
+        panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+      );
+
+    focusables()[0]?.focus();
+
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !panel.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  // À la fermeture, on rend le focus au bouton qui a ouvert le menu.
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (wasOpen.current && !open) toggleRef.current?.focus();
+    wasOpen.current = open;
   }, [open]);
 
   return (
@@ -82,10 +120,12 @@ export default function Navigation() {
           </ul>
 
           <button
+            ref={toggleRef}
             type="button"
             className="-mr-2 flex h-11 w-11 items-center justify-center md:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
+            aria-haspopup="dialog"
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -114,7 +154,11 @@ export default function Navigation() {
           `position: fixed` se cale sur le viewport (le backdrop-filter du
           header créerait sinon un bloc conteneur qui l'écrase). */}
       <div
+        ref={panelRef}
         id="menu-mobile"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
         aria-hidden={!open}
         inert={!open}
         className={`fixed inset-0 z-40 flex flex-col bg-charbon text-cream transition-[opacity,transform] duration-300 ease-out md:hidden ${
@@ -123,10 +167,7 @@ export default function Navigation() {
             : "pointer-events-none opacity-0 -translate-y-2"
         }`}
       >
-        <nav
-          aria-label="Menu"
-          className="flex flex-1 flex-col justify-center gap-1 px-6 pt-[var(--header-h)] pb-8"
-        >
+        <nav className="flex flex-1 flex-col justify-center gap-1 px-6 pt-[var(--header-h)] pb-8">
           {navLinks.map((link, i) => (
             <a
               key={link.href}
@@ -154,6 +195,7 @@ export default function Navigation() {
             >
               <InstagramMark className="h-4 w-4" id="ig-mark-menu" />
               Instagram
+              <span className="sr-only"> (nouvel onglet)</span>
             </a>
           )}
           {socialLinks.email && (

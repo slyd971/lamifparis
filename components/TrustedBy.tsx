@@ -34,7 +34,7 @@ export default function TrustedBy() {
           Des lieux qui ont déjà accueilli La Mif.
         </Reveal>
 
-        <ol className="mt-12 border-t border-cream/15 sm:mt-16">
+        <ul className="mt-12 border-t border-cream/15 sm:mt-16">
           {venues.map((venue, i) => (
             <Reveal
               as="li"
@@ -42,18 +42,21 @@ export default function TrustedBy() {
               delay={i * 80}
               className="group grid grid-cols-[auto_1fr] items-baseline gap-x-4 gap-y-2 border-b border-cream/15 py-6 sm:gap-x-8 sm:py-8"
             >
-              <span className="text-sm font-semibold text-jaune sm:text-base">
+              <span
+                aria-hidden="true"
+                className="text-sm font-semibold text-jaune sm:text-base"
+              >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="display text-[10vw] leading-[1] transition-colors duration-300 group-hover:text-jaune sm:text-[6vw] lg:text-[4.5rem]">
+              <h3 className="display text-[10vw] leading-[1] transition-colors duration-300 group-hover:text-jaune sm:text-[6vw] lg:text-[4.5rem]">
                 {venue.name}
-              </span>
-              <span className="col-start-2 text-sm leading-relaxed text-cream/90 sm:text-base">
+              </h3>
+              <p className="col-start-2 text-sm leading-relaxed text-cream/90 sm:text-base">
                 {venue.detail}
-              </span>
+              </p>
             </Reveal>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
