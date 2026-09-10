@@ -13,7 +13,7 @@ export default function TrustedBy() {
     <section
       id="references"
       aria-labelledby="references-title"
-      className="bg-bordeaux text-cream"
+      className="bg-framboise text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
         <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">

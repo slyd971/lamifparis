@@ -15,7 +15,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-bordeaux text-cream"
+      className="bg-framboise text-cream"
     >
       <Marquee
         text={brand.slogan}
@@ -50,7 +50,7 @@ export default function Contact() {
               <Reveal className="mt-8">
                 <a
                   href={emailHref}
-                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:bg-jaune sm:inline-flex sm:w-auto"
+                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune sm:inline-flex sm:w-auto"
                 >
                   {contact.cta}
                 </a>

@@ -80,7 +80,7 @@ export default function Hero() {
       {/* Voile léger, seulement pour la lisibilité du texte (haut/bas) — la vidéo reste visible au centre */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-bordeaux/60 via-bordeaux/25 to-bordeaux/90"
+        className="absolute inset-0 bg-gradient-to-b from-framboise/60 via-framboise/25 to-framboise/90"
       />
 
       <div className="relative z-10 flex flex-1 flex-col justify-end px-5 pb-8 pt-[calc(var(--header-h)+2rem)] sm:px-8">
@@ -110,7 +110,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#contact"
-            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:bg-jaune"
+            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune"
           >
             {contact.cta}
           </a>

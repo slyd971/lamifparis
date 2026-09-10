@@ -6,7 +6,7 @@ export default function KeyFigures() {
     <section
       id="chiffres"
       aria-label="Chiffres clés"
-      className="bg-bordeaux text-cream"
+      className="bg-framboise text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
         <Reveal

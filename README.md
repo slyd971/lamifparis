@@ -57,16 +57,16 @@ app/
 components/
   Navigation.tsx    Nav sticky minimale + menu mobile
   Hero.tsx          01 — Hero (vidéo de fond desktop / poster mobile) + CTA Contact/Expérience
-  KeyFigures.tsx    02 — Chiffres clés (fond bordeaux)
+  KeyFigures.tsx    02 — Chiffres clés (fond framboise)
   Concept.tsx       03 — Le concept (mise en page éditoriale, fond noir)
-  Experience.tsx    04 — L'expérience (4 univers en frise, fond bordeaux)
+  Experience.tsx    04 — L'expérience (4 univers en frise, fond framboise)
   Frame.tsx         Passe-partout partagé des photos/vidéos (filet + fond teinté, angles vifs)
   Artists.tsx       05 — Line-up (masqué tant que vide, fond noir)
   VideoSection.tsx  06 — Vidéos 9:16 (carrousel swipe mobile / grille desktop, fond noir)
   Gallery.tsx       07 — Galerie immersive, aperçu (fond noir) + bouton vers /galerie
   GalleryGrid.tsx   Mosaïque en colonnes partagée par Gallery.tsx et app/galerie/page.tsx
   Testimonials.tsx  08 — Témoignages (masqué tant que vide, fond noir)
-  Contact.tsx       09 — Contact (fond bordeaux + marquee vermillon) — inclut le footer du site
+  Contact.tsx       09 — Contact (fond framboise + marquee vermillon) — inclut le footer du site
   Reveal.tsx        Apparition au scroll (IntersectionObserver + repli scroll)
   Marquee.tsx       Bandeau défilant CSS
 data/
@@ -77,7 +77,7 @@ public/media/
   video/            Vidéos + posters (hero, reel-1, reel-2, reel-3)
 ```
 
-Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec des sections **bordeaux** ; le vermillon reste réservé au Hero et aux accents.
+Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec des sections **framboise** ; le vermillon reste réservé au Hero et aux accents.
 
 ---
 
@@ -86,7 +86,7 @@ Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec d
 | Rôle | Token Tailwind | Hex |
 |---|---|---|
 | Fond principal (majoritaire) | `charbon` | `#171717` |
-| Sections en alternance | `bordeaux` | `#541C25` |
+| Sections en alternance | `framboise` | `#B31942` |
 | Couleur signature (Hero, accents) | `vermillon` | `#E34234` |
 | Texte sur fond sombre / accent clair | `cream` | `#F3EBDD` |
 | Accent ponctuel | `jaune` | `#F4B942` |
