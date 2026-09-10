@@ -5,7 +5,9 @@ import Concept from "@/components/Concept";
 import Experience from "@/components/Experience";
 import Artists from "@/components/Artists";
 import VideoSection from "@/components/VideoSection";
+import TrustedBy from "@/components/TrustedBy";
 import Gallery from "@/components/Gallery";
+import Collaborations from "@/components/Collaborations";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 
@@ -28,7 +30,9 @@ export default function Home() {
         <Experience />
         <Artists />
         <VideoSection />
+        <TrustedBy />
         <Gallery />
+        <Collaborations />
         <Testimonials />
         <Contact />
       </main>

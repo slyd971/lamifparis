@@ -4,9 +4,6 @@ import Reveal from "@/components/Reveal";
 import Frame from "@/components/Frame";
 
 export default function Concept() {
-  const [p0, p1, p2, p3, p4, p5] = concept.paragraphs;
-  const pullLead = p2.replace(concept.pullQuote, "").trim();
-
   return (
     <section
       id="concept"
@@ -22,43 +19,43 @@ export default function Concept() {
         <Reveal
           as="h2"
           id="concept-title"
-          className="display mt-6 max-w-[20ch] text-[8vw] leading-[1] sm:text-[5vw] lg:text-[4.25rem]"
+          className="display mt-6 max-w-[22ch] text-[7.5vw] leading-[1.15] sm:text-[5vw] sm:leading-[1.1] lg:text-[4.25rem]"
         >
           {concept.statement}
         </Reveal>
 
-        <div className="mt-12 grid gap-x-16 gap-y-10 sm:mt-16 lg:grid-cols-[1fr_0.85fr] lg:items-start">
-          {/* Flux éditorial */}
-          <div className="max-w-[62ch] space-y-6 text-lg leading-relaxed">
-            <Reveal as="p">{p0}</Reveal>
-            <Reveal as="p">{p1}</Reveal>
+        <div className="mt-12 grid gap-x-16 gap-y-10 sm:mt-16 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+          {/* Flux éditorial — court, scannable, aéré. */}
+          <div className="max-w-[54ch] space-y-6 text-base leading-relaxed sm:text-lg">
+            {concept.paragraphs.map((p) => (
+              <Reveal as="p" key={p.slice(0, 24)}>
+                {p}
+              </Reveal>
+            ))}
 
-            {/* Image intercalée sur mobile, masquée ici sur desktop */}
+            {/* Image intercalée sur mobile uniquement. */}
             <Reveal className="lg:hidden">
               <ConceptImage />
             </Reveal>
 
-            <Reveal className="py-3">
+            <Reveal className="py-2">
               <span className="block text-base leading-relaxed text-cream/70">
-                {pullLead}
+                {concept.pullLead}
               </span>
-              <span className="display mt-2 block text-[10vw] leading-[1] text-vermillon sm:text-[3rem] lg:text-[3.4rem]">
+              <span className="display mt-2 block text-[9vw] leading-[1.05] text-vermillon sm:text-[2.8rem] lg:text-[3.2rem]">
                 {concept.pullQuote}
               </span>
             </Reveal>
 
-            <Reveal as="p">{p3}</Reveal>
-            <Reveal as="p">{p4}</Reveal>
-
             <Reveal>
-              <p className="border-t-2 border-vermillon pt-6 text-xl font-medium leading-snug text-jaune sm:text-[1.6rem]">
-                {p5}
+              <p className="border-t-2 border-vermillon pt-6 text-xl font-medium leading-snug text-jaune sm:text-[1.5rem]">
+                {concept.closing}
               </p>
             </Reveal>
           </div>
 
-          {/* Image sur desktop, collée en haut de colonne */}
-          <Reveal className="hidden lg:block lg:pt-2">
+          {/* Image desktop — suit la lecture pour ne pas laisser de vide. */}
+          <Reveal className="hidden lg:block lg:sticky lg:top-28">
             <ConceptImage />
           </Reveal>
         </div>
@@ -74,7 +71,7 @@ function ConceptImage() {
         src={concept.image.src}
         alt={concept.image.alt}
         fill
-        sizes="(max-width: 1024px) 100vw, 42vw"
+        sizes="(max-width: 1024px) 100vw, 40vw"
         placeholder="blur"
         className="object-cover"
       />

@@ -17,24 +17,25 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_TITLE = "La Mif Paris — La soirée appart en beaucoup plus grand";
 const SITE_DESCRIPTION =
-  "LA MIF — un concept de soirée pensé pour les plus de 25 ans : l'esprit d'une soirée appart à l'échelle d'un véritable événement. Jeux de société, karaoké, lives, turn up et une vraie communauté.";
+  "La Mif réinvente la soirée entre potes à grande échelle : jeux, karaoké, live artistes et DJ sets pour une communauté de plus de 25 ans.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "LA MIF — Presskit",
+    default: SITE_TITLE,
     template: "%s — LA MIF",
   },
   description: SITE_DESCRIPTION,
   applicationName: "LA MIF",
   keywords: [
     "LA MIF",
-    "soirée",
+    "La Mif Paris",
+    "soirée appart",
     "événement",
     "communauté",
     "presskit",
-    "house party",
     "karaoké",
     "concept soirée",
     "Paris",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "LA MIF — Presskit",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: "/",
     siteName: "LA MIF",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LA MIF — Presskit",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     // twitter:image : fourni par app/twitter-image.tsx (paysage 1200×630).
   },

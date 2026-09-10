@@ -95,6 +95,10 @@ export const brand = {
   place: "Paris",
   since: 2023,
   slogan: "LA MIF C'EST ÇA",
+  /** Accroche principale du hero — compréhension en < 5 s. */
+  tagline: "La soirée appart, en beaucoup plus grand.",
+  /** Signature courte : les 4 temps forts + la ville. */
+  signature: "Jeux · Karaoké · Live · DJ Sets — Paris",
   intro:
     "Un concept de soirée pensé pour les plus de 25 ans : l'esprit d'une soirée appart, à l'échelle d'un véritable événement.",
   /** Logo officiel — wordmark « LA MIF' / PARIS » détouré (fond transparent,
@@ -107,11 +111,17 @@ export const brand = {
 /* ================================================================== */
 
 export const keyFigures: KeyFigure[] = [
-  { value: "+15", label: "Soirées en 3 ans" },
-  { value: "+5 000", label: "Clients réunis" },
-  { value: "25+", label: "Cœur de cible" },
-  { value: "Concept unique", label: "Comme une soirée appart" },
+  { value: "+15", label: "soirées organisées en 3 ans" },
+  { value: "+5 000", label: "participants réunis" },
+  { value: "25+", label: "cœur de cible" },
 ];
+
+/** Traité à part des chiffres : ce n'est pas une donnée statistique mais la
+ *  nature du concept. Affiché avec un style distinct dans la section. */
+export const conceptBadge = {
+  value: "Concept unique",
+  label: "L'esprit d'une soirée appart",
+} as const;
 
 /* ================================================================== */
 /*  03 — LE CONCEPT                                                    */
@@ -120,16 +130,16 @@ export const keyFigures: KeyFigure[] = [
 export const concept = {
   kicker: "Le concept",
   statement:
-    "Retrouver l'esprit d'une soirée appart, mais dans un véritable événement.",
+    "On ne vient pas seulement à La Mif pour danser. On vient pour vivre quelque chose ensemble.",
   paragraphs: [
-    "Créée en 2023, La Mif est un concept de soirée pensé pour les plus de 25 ans, avec une envie simple : retrouver l'esprit d'une soirée appart, mais dans un véritable événement.",
-    "Ici, on vient pour faire la fête, mais surtout pour partager un moment ensemble. Des jeux de société sont disponibles toute la soirée, le karaoké permet à chacun de prendre le micro et des artistes live viennent compléter l'expérience.",
-    "Et quand il est temps de faire monter l'ambiance, La Mif sait aussi turn up. Mais sans le côté m'as-tu-vu.",
-    "Depuis le début, La Mif veut sortir des codes traditionnels des clubs et des boîtes de nuit : les tables, les promos et cette logique où certains viennent davantage pour se montrer que pour réellement profiter de leur soirée.",
-    "La Mif propose une autre manière de sortir : une soirée plus conviviale, plus spontanée, où l'on peut jouer, chanter, profiter d'un live, danser et faire la fête dans un même événement.",
-    "L'objectif est surtout de fédérer une véritable communauté. Créer des rendez-vous où les gens se retrouvent, rencontrent de nouvelles personnes et finissent par avoir le sentiment de faire partie d'une même famille.",
+    "Créée en 2023, La Mif retrouve la spontanéité d'une soirée entre potes — à l'échelle d'un véritable événement.",
+    "Jeux de société toute la soirée, karaoké ouvert à tous, artistes en live, DJ sets : on joue, on discute, on chante, on rencontre du monde, et on finit par danser.",
   ],
-  pullQuote: "Mais sans le côté m'as-tu-vu.",
+  /** Amorce + citation du bloc « turn up » (mis en exergue). */
+  pullLead: "Et quand vient le moment de turn up, La Mif sait faire.",
+  pullQuote: "Sans le côté m'as-tu-vu. Juste la Mif.",
+  /** Phrase de clôture, sur la communauté. */
+  closing: "Au fil de la nuit, les inconnus du début deviennent la Mif.",
   image: {
     src: conceptBio,
     alt: "Quatre membres de la communauté LA MIF réunis devant le mur d'un événement",
@@ -145,7 +155,7 @@ export const experiences: Experience[] = [
     id: "jeux",
     index: "01",
     title: "Jeux de société",
-    text: "Des tables dédiées, disponibles toute la soirée pour briser la glace, lancer des défis entre inconnus et rire fort avant même que la piste ne s'anime.",
+    text: "Des jeux accessibles toute la soirée pour briser la glace, provoquer les rencontres et retrouver l'ambiance d'une soirée entre potes.",
     media: {
       kind: "image",
       src: g12,
@@ -156,7 +166,7 @@ export const experiences: Experience[] = [
     id: "karaoke",
     index: "02",
     title: "Karaoké",
-    text: "Le micro circule et la scène appartient à tout le monde : reprises connues, fous rires collectifs — seul compte le plaisir de chanter ensemble, sans jugement.",
+    text: "Le micro passe de main en main. Reprises, fous rires, personne ne juge — tout le monde y passe.",
     media: {
       kind: "image",
       src: g2,
@@ -167,7 +177,7 @@ export const experiences: Experience[] = [
     id: "live",
     index: "03",
     title: "Live artistes",
-    text: "Sur certaines dates, des artistes montent sur scène pour une vraie performance live, entre deux ambiances — pas un simple DJ set, une proposition artistique à part entière.",
+    text: "Sur certaines dates, de vrais lives montent sur scène. Pas un simple DJ set : une performance à part entière.",
     media: {
       kind: "image",
       src: g13,
@@ -178,7 +188,7 @@ export const experiences: Experience[] = [
     id: "turnup",
     index: "04",
     title: "Turn up",
-    text: "Puis l'énergie grimpe naturellement, la playlist s'intensifie et le dancefloor se remplit — sans jamais basculer dans la course au paraître, juste l'envie collective de danser.",
+    text: "L'énergie grimpe, la playlist s'intensifie, le dancefloor se remplit. L'envie collective de danser, sans la course au paraître.",
     media: {
       kind: "image",
       src: g5,
@@ -221,22 +231,68 @@ export const videos: VideoItem[] = [
 export const heroVideo = {
   mp4: "/media/video/hero.mp4",
   webm: "/media/video/hero.webm",
+  /** Image d'attente — affichée immédiatement, avant/à la place de la vidéo
+   *  (reduced-motion, Save-Data, connexion lente, temps de buffer). */
+  poster: "/media/video/hero-poster.jpg",
 } as const;
+
+/* ================================================================== */
+/*  06 bis — ILS NOUS ONT FAIT CONFIANCE                               */
+/*  Uniquement les lieux réellement validés. Ne rien ajouter sans      */
+/*  confirmation (pas de dates, pas de nombre d'éditions, pas de logo).*/
+/* ================================================================== */
+
+export const venues: string[] = ["Nakama", "Velvet Bar", "Bateau Phare"];
+
+/* ================================================================== */
+/*  08 — LA MIF × VOUS  (pistes de collaboration B2B)                  */
+/* ================================================================== */
+
+export type Collaboration = {
+  id: string;
+  title: string;
+  text: string;
+};
+
+export const collaborations: Collaboration[] = [
+  {
+    id: "lieux",
+    title: "Lieux",
+    text: "Accueillir une édition La Mif et créer un véritable rendez-vous communautaire.",
+  },
+  {
+    id: "marques",
+    title: "Marques",
+    text: "Imaginer une activation intégrée naturellement à l'expérience La Mif.",
+  },
+  {
+    id: "artistes",
+    title: "Artistes",
+    text: "Créer des showcases, performances et collaborations au cœur de l'événement.",
+  },
+  {
+    id: "evenements",
+    title: "Événements",
+    text: "Adapter l'expérience La Mif à une programmation ou un événement existant.",
+  },
+];
 
 /* ================================================================== */
 /*  07 — IMMERSION / GALERIE                                           */
 /* ================================================================== */
 
+// Ordre pensé pour raconter l'arc d'une soirée : on arrive / on échange /
+// on joue-on chante / on partage / on danse. (Aucun média retiré.)
 export const gallery: GalleryItem[] = [
-  { src: g13, alt: "Foule dense et joyeuse, invités qui chantent et dansent ensemble" },
-  { src: g12, alt: "Invité hilare, bras levé, en plein fou rire" },
-  { src: g5, alt: "Public qui danse serré sur le dancefloor" },
-  { src: g2, alt: "Trois personnes derrière les platines, micro en main" },
   { src: g1, alt: "Deux amis complices, bras sur l'épaule, en pleine discussion" },
+  { src: g9, alt: "Invitée souriante à table, veste crème, regard complice" },
+  { src: g12, alt: "Invité hilare, bras levé, en plein fou rire" },
+  { src: g2, alt: "Trois personnes derrière les platines, micro en main" },
+  { src: g14, alt: "Invitée souriante derrière un éventail coloré" },
   { src: g11, alt: "Invité faisant le signe de la paix dans la foule, casquette rouge" },
   { src: g7, alt: "Portrait rapproché d'une invitée sur le dancefloor, lumières chaudes" },
-  { src: g14, alt: "Invitée souriante derrière un éventail coloré" },
-  { src: g9, alt: "Invitée souriante à table, veste crème, regard complice" },
+  { src: g5, alt: "Public qui danse serré sur le dancefloor" },
+  { src: g13, alt: "Foule dense et joyeuse, invités qui chantent et dansent ensemble" },
 ];
 
 /** Galerie complète (§ page /galerie) — tout l'album, sans sélection. */
@@ -265,9 +321,11 @@ export const testimonials: Testimonial[] = [];
 /* ================================================================== */
 
 export const contact = {
-  title: "Construire la prochaine expérience La Mif",
-  subtitle:
-    "Pour accueillir une édition, imaginer une collaboration ou connecter une marque à la communauté La Mif.",
+  /** Titre en deux temps (rendu sur deux lignes display). */
+  titleLines: ["Vous avez le lieu.", "On ramène la Mif."],
+  subtitle: "Accueillir une édition · Collaboration · Partenariat marque.",
+  /** Libellé du CTA principal. */
+  cta: "Parlons-en",
   image: {
     src: contactTeam,
     alt: "L'équipe LA MIF réunie, portrait de groupe en noir et blanc",
@@ -289,5 +347,6 @@ export const navLinks = [
   { href: "/#concept", label: "Concept" },
   { href: "/#experience", label: "Expérience" },
   { href: "/#galerie", label: "Galerie" },
+  { href: "/#collab", label: "Collab" },
   { href: "/#contact", label: "Contact" },
 ];

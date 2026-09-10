@@ -29,8 +29,15 @@
   --header-h: 4.25rem;
 }
 
-* {
-  min-width: 0;
+/* Réinit flexbox posée dans @layer base : les utilitaires Tailwind
+   (min-w-*, etc.) restent prioritaires. Une règle hors layer les
+   écraserait toutes, quelle que soit la spécificité. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    min-width: 0;
+  }
 }
 
 html {

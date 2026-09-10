@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { brand, heroVideo, socialLinks } from "@/data/laMif";
+import { brand, contact, heroVideo, socialLinks } from "@/data/laMif";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -46,6 +47,18 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden bg-vermillon text-cream"
     >
+      {/* Image d'attente : toujours rendue, sous la vidéo. Évite le hero vide
+          en reduced-motion / Save-Data / connexion lente / temps de buffer. */}
+      <Image
+        src={heroVideo.poster}
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 h-full w-full object-cover object-center sm:object-top"
+      />
+
       {enableVideo && (
         <video
           ref={videoRef}
@@ -55,6 +68,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
+          poster={heroVideo.poster}
           aria-hidden="true"
           tabIndex={-1}
         >
@@ -66,11 +80,11 @@ export default function Hero() {
       {/* Voile léger, seulement pour la lisibilité du texte (haut/bas) — la vidéo reste visible au centre */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-bordeaux/55 via-bordeaux/10 to-bordeaux/85"
+        className="absolute inset-0 bg-gradient-to-b from-bordeaux/60 via-bordeaux/25 to-bordeaux/90"
       />
 
       <div className="relative z-10 flex flex-1 flex-col justify-end px-5 pb-8 pt-[calc(var(--header-h)+2rem)] sm:px-8">
-        <p className="mb-6 text-sm font-semibold uppercase leading-relaxed tracking-[0.18em] text-cream">
+        <p className="mb-6 text-sm font-semibold uppercase leading-relaxed tracking-[0.18em] text-cream/80">
           {brand.place} · depuis {brand.since}
         </p>
 
@@ -80,11 +94,21 @@ export default function Hero() {
 
         {/* Le nom "LA MIF" est déjà affiché juste au-dessus (h1) — on n'en
             garde que le reste ici pour éviter la répétition. */}
-        <p className="display mt-4 text-[10vw] text-jaune sm:text-[7vw] lg:text-[5.5rem]">
+        <p className="display text-[10vw] leading-[0.95] text-jaune sm:text-[7vw] lg:text-[5.5rem]">
           {brand.slogan.replace(brand.name, "").trim()}
         </p>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-cream sm:text-lg">
+        {/* Accroche : le concept compris en une phrase. */}
+        <p className="mt-6 max-w-xl text-lg font-semibold leading-snug text-cream sm:text-2xl">
+          {brand.tagline}
+        </p>
+
+        {/* Signature : les temps forts, d'un coup d'œil. */}
+        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-cream/75 sm:text-sm">
+          {brand.signature}
+        </p>
+
+        <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/75 sm:text-base">
           {brand.intro}
         </p>
 
@@ -93,7 +117,7 @@ export default function Hero() {
             href="#contact"
             className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:bg-jaune"
           >
-            Contact
+            {contact.cta}
           </a>
           {socialLinks.instagram && (
             <a

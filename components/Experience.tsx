@@ -60,17 +60,16 @@ export default function Experience() {
         <Reveal
           as="h2"
           id="experience-title"
-          className="display mt-6 max-w-[16ch] text-[11vw] leading-[0.92] sm:text-[6vw] lg:text-[4rem]"
+          className="display mt-6 max-w-[16ch] text-[11vw] leading-[1.12] sm:text-[6vw] sm:leading-[1.08] lg:text-[4rem]"
         >
           Une seule soirée, plusieurs manières d&apos;en profiter.
         </Reveal>
         <Reveal
           as="p"
-          className="mt-6 max-w-2xl text-base leading-relaxed text-cream/75 sm:text-lg"
+          className="mt-6 max-w-2xl text-base leading-relaxed text-cream/80 sm:text-lg"
         >
-          Ni quatre événements, ni quatre formules : jeux, karaoké, lives et turn
-          up font partie de la même expérience LA MIF, du début de soirée
-          jusqu&apos;au dancefloor.
+          Jeux, karaoké, live et turn up : quatre temps forts d&apos;une même
+          soirée, du premier verre jusqu&apos;au dancefloor.
         </Reveal>
 
         <ol className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:mt-16 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-6">

@@ -86,15 +86,27 @@ export default function OpengraphImage() {
 
         <div
           style={{
-            fontSize: 28,
-            color: "rgba(243,235,221,0.75)",
+            fontSize: 30,
+            color: "#F3EBDD",
             textAlign: "center",
-            maxWidth: 820,
+            maxWidth: 860,
             display: "flex",
           }}
         >
-          Un concept de soirée pour les +25 ans — jeux, karaoké, lives, turn up.
-          {" "}Depuis {brand.since} · {brand.place}.
+          {brand.tagline}
+        </div>
+
+        <div
+          style={{
+            fontSize: 22,
+            letterSpacing: 3,
+            textTransform: "uppercase",
+            color: "rgba(243,235,221,0.7)",
+            textAlign: "center",
+            display: "flex",
+          }}
+        >
+          {brand.signature}
         </div>
       </div>
     ),

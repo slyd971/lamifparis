@@ -58,9 +58,9 @@ export default function VideoSection() {
         <Reveal
           as="h2"
           id="videos-title"
-          className="display mt-6 max-w-[16ch] text-[12vw] leading-[0.9] sm:text-[7vw] lg:text-[5rem]"
+          className="display mt-6 max-w-[24ch] text-[10vw] leading-[1.12] sm:text-[6.5vw] sm:leading-[1.08] lg:text-[3.75rem]"
         >
-          Ce que ça donne, une soirée LA MIF
+          La Mif, ça s&apos;explique. Mais surtout, ça se vit.
         </Reveal>
 
         <ul

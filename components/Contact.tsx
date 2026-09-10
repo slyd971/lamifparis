@@ -23,49 +23,75 @@ export default function Contact() {
 
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-20">
-          {/* Colonne de gauche : titre, texte, boutons — la photo démarre
-              à la même hauteur que le titre, pas seulement que les CTA. */}
+          {/* Colonne de gauche : titre, texte, CTA. */}
           <div className="max-w-xl">
             <Reveal
               as="h2"
               id="contact-title"
-              className="display max-w-[16ch] text-[10vw] leading-[0.94] sm:text-[6.5vw] lg:text-[5.5rem]"
+              className="display text-[11vw] leading-[1.12] sm:text-[6.5vw] sm:leading-[1.05] lg:text-[5rem]"
             >
-              {contact.title}
+              {contact.titleLines.map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
             </Reveal>
 
             <Reveal
               as="p"
-              className="mt-8 text-lg leading-relaxed text-cream"
+              className="mt-8 text-sm font-semibold uppercase tracking-[0.14em] text-cream/80 sm:text-base"
             >
               {contact.subtitle}
             </Reveal>
 
-            <Reveal className="mt-8 flex flex-wrap gap-4">
-              {emailHref ? (
+            {/* CTA principal — très identifiable. */}
+            {emailHref && (
+              <Reveal className="mt-8">
                 <a
                   href={emailHref}
-                  className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:bg-jaune"
+                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-bordeaux transition-colors hover:bg-jaune sm:inline-flex sm:w-auto"
                 >
-                  Email
+                  {contact.cta}
                 </a>
-              ) : (
-                <span className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 border border-cream/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream/60">
-                  Email — bientôt
-                </span>
-              )}
+              </Reveal>
+            )}
 
+            {/* Canaux secondaires — uniquement ceux réellement disponibles. */}
+            <Reveal className="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               {whatsappHref && (
                 <a
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-[#25D366] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-[#053316] transition-colors hover:bg-[#1fb959]"
+                  className="flex w-full items-center justify-center gap-2 border border-cream/60 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10 sm:inline-flex sm:w-auto sm:min-w-[10.5rem]"
                 >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#25D366]" fill="currentColor" aria-hidden="true">
                     <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.41-1.42a9.87 9.87 0 0 0 4.63 1.18h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.15.26.1 1.68.79 1.97.94.29.15.48.22.55.34.07.13.07.75-.17 1.43Z" />
                   </svg>
                   WhatsApp
+                </a>
+              )}
+
+              {socialLinks.instagram && (
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-2 border border-cream/60 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10 sm:inline-flex sm:w-auto sm:min-w-[10.5rem]"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4.2" />
+                    <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+                  </svg>
+                  Instagram
                 </a>
               )}
             </Reveal>
@@ -94,7 +120,7 @@ export default function Contact() {
           <span>
             {brand.name} — {brand.place} · depuis {brand.since}
           </span>
-          <span>Presskit {new Date().getFullYear()}</span>
+          <span>Presskit</span>
         </div>
       </footer>
     </section>

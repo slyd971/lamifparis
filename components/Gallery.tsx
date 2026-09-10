@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { gallery, brand } from "@/data/laMif";
+import { gallery } from "@/data/laMif";
 import Reveal from "@/components/Reveal";
 import GalleryGrid from "@/components/GalleryGrid";
 
@@ -19,9 +19,16 @@ export default function Gallery() {
           <Reveal
             as="h2"
             id="galerie-title"
-            className="display mt-6 text-[13vw] leading-[0.88] sm:text-[8vw] lg:text-[6rem]"
+            className="display mt-6 text-[13vw] leading-[1] sm:text-[8vw] lg:text-[5.5rem]"
           >
-            {brand.slogan}
+            La Mif en images
+          </Reveal>
+          <Reveal
+            as="p"
+            className="mt-6 max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg"
+          >
+            On arrive, on discute, on joue, on chante, on partage — et on finit
+            par danser.
           </Reveal>
         </div>
 
