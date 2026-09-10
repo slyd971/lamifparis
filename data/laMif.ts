@@ -275,7 +275,7 @@ export const contact = {
 
 export const socialLinks: SocialLinks = {
   instagram: "https://www.instagram.com/lamifparis2.0/",
-  email: "",
+  email: "lamifparis2.0@gmail.com",
   booking: "",
   whatsapp: "+33663907888",
 };

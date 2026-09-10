@@ -27,7 +27,15 @@ publiée comme Artifact Claude pour partage rapide. Images et vidéos y sont for
 compressées et les 2 vidéos raccourcies (~26 s). La **version de production** reste le projet Next.js.
 Pour la régénérer : voir `scratchpad/build-artifact.mjs` (script de build hors dépôt).
 
-Variable d'environnement optionnelle (OpenGraph / URL absolue) :
+### URL de base du site
+
+Domaine de production : **https://lamifparis.presskit.fr** — valeur par défaut
+codée dans [`lib/site.ts`](lib/site.ts). Elle alimente `<link rel="canonical">`,
+les balises Open Graph / Twitter, `robots.txt` et `sitemap.xml` (tous en https,
+même domaine).
+
+Surcharge possible via une variable d'environnement (préproduction, autre
+domaine) :
 
 ```
 NEXT_PUBLIC_SITE_URL=https://votre-domaine.fr
@@ -188,8 +196,8 @@ Un lien laissé vide s'affiche en « Lien à venir » (désactivé). `booking` a
 - [ ] Noms / photos des artistes (§05)
 - [ ] Témoignages (§08)
 - [x] Instagram — https://www.instagram.com/lamifparis2.0/
-- [ ] Email contact / booking (§09)
-- [ ] URL de production (`NEXT_PUBLIC_SITE_URL`)
+- [x] Email contact — lamifparis2.0@gmail.com (§09) · booking encore à fournir
+- [x] URL de production — https://lamifparis.presskit.fr (défaut dans `lib/site.ts`)
 
 Tant que ces éléments ne sont pas fournis, les sections concernées sont soit masquées, soit affichées avec un placeholder technique — **aucune donnée fictive n'est présente**.
 

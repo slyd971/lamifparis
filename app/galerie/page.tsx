@@ -20,13 +20,15 @@ export const metadata: Metadata = {
     siteName: "LA MIF",
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "/media/video/hero-poster.jpg", width: 720, height: 1280, alt: "LA MIF" }],
+    // Même carte paysage que la home (app/opengraph-image.tsx) — référencée
+    // explicitement car un openGraph.* de page n'hérite pas de l'image parente.
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "LA MIF" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Galerie — LA MIF",
     description,
-    images: ["/media/video/hero-poster.jpg"],
+    images: ["/twitter-image"],
   },
 };
 

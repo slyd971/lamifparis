@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     siteName: "LA MIF",
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "/media/video/hero-poster.jpg", width: 720, height: 1280, alt: "LA MIF" }],
+    // og:image : fourni par app/opengraph-image.tsx (paysage 1200×630).
   },
   twitter: {
     card: "summary_large_image",
     title: "LA MIF — Presskit",
     description: SITE_DESCRIPTION,
-    images: ["/media/video/hero-poster.jpg"],
+    // twitter:image : fourni par app/twitter-image.tsx (paysage 1200×630).
   },
 };
 
@@ -74,11 +74,20 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: brand.name,
+  alternateName: "LA MIF Paris",
   url: SITE_URL,
+  logo: `${SITE_URL}/icon.svg`,
+  image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
-  image: `${SITE_URL}/media/video/hero-poster.jpg`,
-  areaServed: brand.place,
+  slogan: brand.slogan,
   foundingDate: String(brand.since),
+  areaServed: brand.place,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: brand.place,
+    addressCountry: "FR",
+  },
+  email: socialLinks.email || undefined,
   sameAs: [socialLinks.instagram].filter(Boolean),
 };
 
