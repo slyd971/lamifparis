@@ -95,8 +95,8 @@ export const brand = {
   place: "Paris",
   since: 2023,
   slogan: "LA MIF C'EST ÇA",
-  /** Signature courte : les 4 temps forts + la ville. */
-  signature: "Jeux · Karaoké · Live · DJ Sets — Paris",
+  /** Signature courte : les temps forts d'une soirée. */
+  signature: "Jeux · Food · Karaoké · Live · DJ Sets",
   intro:
     "Un concept de soirée pensé pour les plus de 25 ans : l'esprit d'une soirée appart, à l'échelle d'un véritable événement.",
   /** Logo officiel — wordmark « LA MIF' / PARIS » détouré (fond transparent,
