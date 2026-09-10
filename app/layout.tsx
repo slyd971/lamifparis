@@ -17,7 +17,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_TITLE = "La Mif Paris — La soirée appart en beaucoup plus grand";
+const SITE_TITLE = "La Mif Paris — Presskit";
 const SITE_DESCRIPTION =
   "La Mif, la soirée entre potes à grande échelle : jeux, karaoké, lives et DJ sets pour une communauté 25+. Plus de 20 soirées et 5 000 participants depuis 2023.";
 

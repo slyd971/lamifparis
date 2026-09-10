@@ -69,27 +69,14 @@ export default function OpengraphImage() {
         </div>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} alt="" width={360} />
+        <img src={logoSrc} alt="" width={420} />
 
         <div
           style={{
-            fontSize: 68,
-            fontWeight: 700,
-            letterSpacing: 2,
+            fontSize: 30,
+            letterSpacing: 4,
             textTransform: "uppercase",
             color: "#F4B942",
-            display: "flex",
-          }}
-        >
-          {brand.slogan}
-        </div>
-
-        <div
-          style={{
-            fontSize: 24,
-            letterSpacing: 3,
-            textTransform: "uppercase",
-            color: "rgba(243,235,221,0.7)",
             textAlign: "center",
             display: "flex",
           }}
