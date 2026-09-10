@@ -19,7 +19,7 @@ export default function Contact() {
     >
       <Marquee
         text={brand.slogan}
-        className="bg-corail py-4 text-charbon"
+        className="bg-jaune py-4 text-charbon"
         markClassName="text-framboise"
       />
 
@@ -51,7 +51,7 @@ export default function Contact() {
               <Reveal className="mt-8">
                 <a
                   href={emailHref}
-                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-corail sm:inline-flex sm:w-auto"
+                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune sm:inline-flex sm:w-auto"
                 >
                   {contact.cta}
                 </a>

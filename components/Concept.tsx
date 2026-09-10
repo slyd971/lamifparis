@@ -11,8 +11,8 @@ export default function Concept() {
       aria-labelledby="concept-title"
     >
       <div className="mx-auto max-w-[1180px] px-5 py-[var(--section-pad)] sm:px-8">
-        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
-          <span className="h-px w-10 bg-corail" />
+        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
+          <span className="h-px w-10 bg-jaune" />
           {concept.kicker}
         </Reveal>
 

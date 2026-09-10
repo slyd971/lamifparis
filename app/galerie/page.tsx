@@ -48,8 +48,8 @@ export default function GaleriePage() {
               Retour au presskit
             </Link>
 
-            <div className="mt-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
-              <span className="h-px w-10 bg-corail" />
+            <div className="mt-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
+              <span className="h-px w-10 bg-jaune" />
               Immersion
             </div>
             <h1 className="display mt-6 text-[13vw] leading-[0.88] sm:text-[8vw] lg:text-[6rem]">

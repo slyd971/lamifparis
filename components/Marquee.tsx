@@ -1,7 +1,7 @@
 type MarqueeProps = {
   text: string;
   className?: string;
-  /** Classe couleur du séparateur ✱ (par défaut : corail). */
+  /** Classe couleur du séparateur ✱ (par défaut : jaune). */
   markClassName?: string;
   /** Nombre de répétitions par piste (la piste est dupliquée pour la boucle). */
   repeat?: number;
@@ -11,7 +11,7 @@ type MarqueeProps = {
 export default function Marquee({
   text,
   className = "",
-  markClassName = "text-corail",
+  markClassName = "text-jaune",
   repeat = 4,
 }: MarqueeProps) {
   const items = Array.from({ length: repeat });
