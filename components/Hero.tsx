@@ -98,13 +98,8 @@ export default function Hero() {
           {brand.slogan.replace(brand.name, "").trim()}
         </p>
 
-        {/* Accroche : le concept compris en une phrase. */}
-        <p className="mt-6 max-w-xl text-lg font-semibold leading-snug text-cream sm:text-2xl">
-          {brand.tagline}
-        </p>
-
         {/* Signature : les temps forts, d'un coup d'œil. */}
-        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-cream/75 sm:text-sm">
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cream/80 sm:text-sm">
           {brand.signature}
         </p>
 

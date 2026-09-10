@@ -86,19 +86,7 @@ export default function OpengraphImage() {
 
         <div
           style={{
-            fontSize: 30,
-            color: "#F3EBDD",
-            textAlign: "center",
-            maxWidth: 860,
-            display: "flex",
-          }}
-        >
-          {brand.tagline}
-        </div>
-
-        <div
-          style={{
-            fontSize: 22,
+            fontSize: 24,
             letterSpacing: 3,
             textTransform: "uppercase",
             color: "rgba(243,235,221,0.7)",

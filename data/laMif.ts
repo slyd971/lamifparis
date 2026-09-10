@@ -95,8 +95,6 @@ export const brand = {
   place: "Paris",
   since: 2023,
   slogan: "LA MIF C'EST ÇA",
-  /** Accroche principale du hero — compréhension en < 5 s. */
-  tagline: "La soirée appart, en beaucoup plus grand.",
   /** Signature courte : les 4 temps forts + la ville. */
   signature: "Jeux · Karaoké · Live · DJ Sets — Paris",
   intro:
