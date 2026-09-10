@@ -119,9 +119,21 @@ export default function Hero() {
           {brand.name}
         </h1>
 
-        {/* Signature : les temps forts, d'un coup d'œil — juste sous le nom. */}
-        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-jaune sm:text-sm">
-          {brand.signature}
+        {/* Signature : les temps forts, en display jaune — juste sous le nom.
+            Chaque terme garde son séparateur (jamais de « · » en début de
+            ligne) ; la coupure se fait sur l'espace entre deux termes. */}
+        <p className="display mt-3 text-[7vw] leading-[1.02] text-jaune sm:text-[4vw] lg:text-[3rem]">
+          {brand.signature.split(" · ").map((item, i, arr) => (
+            <span key={item}>
+              {i > 0 ? " " : ""}
+              <span className="whitespace-nowrap">
+                {item}
+                {i < arr.length - 1 && (
+                  <span aria-hidden="true" className="text-jaune/40">{" ·"}</span>
+                )}
+              </span>
+            </span>
+          ))}
         </p>
 
         <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/90 sm:text-base">
