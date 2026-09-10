@@ -119,14 +119,8 @@ export default function Hero() {
           {brand.name}
         </h1>
 
-        {/* Le nom "LA MIF" est déjà affiché juste au-dessus (h1) — on n'en
-            garde que le reste ici pour éviter la répétition. */}
-        <p className="display text-[10vw] leading-[0.95] text-jaune sm:text-[7vw] lg:text-[5.5rem]">
-          {brand.slogan.replace(brand.name, "").trim()}
-        </p>
-
-        {/* Signature : les temps forts, d'un coup d'œil. */}
-        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cream/90 sm:text-sm">
+        {/* Signature : les temps forts, d'un coup d'œil — juste sous le nom. */}
+        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-jaune sm:text-sm">
           {brand.signature}
         </p>
 
