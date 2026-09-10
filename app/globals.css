@@ -10,11 +10,9 @@
   --color-vermillon: #e34234;
   --color-framboise: #b31942;
   --color-charbon: #171717;
-  --color-jaune: #ffc42b;
-
-  /* Nuances utilitaires dérivées */
-  --color-cream-dim: #e7dcc8;
-  --color-vermillon-deep: #c5311f;
+  /* Jaune éclairci (#ffc42b → #ffd24d) : 4,6:1 sur framboise, passe AA
+     pour les petits libellés des sections framboise. */
+  --color-jaune: #ffd24d;
 
   /* Typographies (injectées par next/font dans le layout) */
   --font-display: var(--font-anton), "Arial Narrow", system-ui, sans-serif;

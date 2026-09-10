@@ -66,7 +66,7 @@ export default function Experience() {
         </Reveal>
         <Reveal
           as="p"
-          className="mt-6 max-w-2xl text-base leading-relaxed text-cream/80 sm:text-lg"
+          className="mt-6 max-w-2xl text-base leading-relaxed text-cream/90 sm:text-lg"
         >
           Jeux, karaoké, live et turn up : quatre temps forts d&apos;une même
           soirée, du premier verre jusqu&apos;au dancefloor.
@@ -89,7 +89,7 @@ export default function Experience() {
                   {xp.title}
                 </h3>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-cream/75">
+              <p className="mt-2 text-sm leading-relaxed text-cream/90">
                 {xp.text}
               </p>
             </Reveal>

@@ -49,3 +49,8 @@ next-env.d.ts
 /LOGO/
 /Contact/
 /la-mif-presskit.html
+
+# Espace de travail local (scripts de build, captures, brouillons) — hors dépôt.
+/scratchpad/
+/scratch_*.png
+/scratch_*.jpg

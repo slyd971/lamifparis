@@ -29,7 +29,7 @@ export default function TrustedBy() {
         </Reveal>
         <Reveal
           as="p"
-          className="mt-6 max-w-xl text-base leading-relaxed text-cream/80 sm:text-lg"
+          className="mt-6 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg"
         >
           Des lieux qui ont déjà accueilli La Mif.
         </Reveal>
@@ -48,7 +48,7 @@ export default function TrustedBy() {
               <span className="display text-[10vw] leading-[1] transition-colors duration-300 group-hover:text-jaune sm:text-[6vw] lg:text-[4.5rem]">
                 {venue.name}
               </span>
-              <span className="col-start-2 text-sm leading-relaxed text-cream/70 sm:text-base">
+              <span className="col-start-2 text-sm leading-relaxed text-cream/90 sm:text-base">
                 {venue.detail}
               </span>
             </Reveal>

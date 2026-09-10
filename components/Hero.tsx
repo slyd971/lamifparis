@@ -93,11 +93,11 @@ export default function Hero() {
       {/* Voile léger, seulement pour la lisibilité du texte (haut/bas) — la vidéo reste visible au centre */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-framboise/60 via-framboise/25 to-framboise/90"
+        className="absolute inset-0 bg-gradient-to-b from-framboise/75 via-framboise/40 to-framboise/95"
       />
 
       <div className="relative z-10 flex flex-1 flex-col justify-end px-5 pb-8 pt-[calc(var(--header-h)+2rem)] sm:px-8">
-        <p className="mb-6 text-sm font-semibold uppercase leading-relaxed tracking-[0.18em] text-cream/80">
+        <p className="mb-6 text-sm font-semibold uppercase leading-relaxed tracking-[0.18em] text-cream/90">
           {brand.place} · depuis {brand.since}
         </p>
 
@@ -112,18 +112,18 @@ export default function Hero() {
         </p>
 
         {/* Signature : les temps forts, d'un coup d'œil. */}
-        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cream/80 sm:text-sm">
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-cream/90 sm:text-sm">
           {brand.signature}
         </p>
 
-        <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/75 sm:text-base">
+        <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/90 sm:text-base">
           {brand.intro}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#contact"
-            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune"
+            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune hover:text-charbon"
           >
             {contact.cta}
           </a>
@@ -153,7 +153,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 flex items-center justify-between border-t border-cream/20 px-5 py-4 text-xs uppercase tracking-[0.2em] sm:px-8">
-        <span className="text-cream/70">Presskit</span>
+        <span className="text-cream/90">Presskit</span>
         <a
           href="#chiffres"
           className="group inline-flex items-center gap-2 transition-opacity hover:opacity-70"

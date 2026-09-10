@@ -89,7 +89,7 @@ Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec d
 | Sections en alternance | `framboise` | `#B31942` |
 | Couleur signature (Hero) | `vermillon` | `#E34234` |
 | Texte sur fond sombre / accent clair | `cream` | `#F3EBDD` |
-| Accent ponctuel | `jaune` | `#FFC42B` |
+| Accent ponctuel | `jaune` | `#FFD24D` |
 
 Modifiables dans `app/globals.css` (bloc `@theme`).
 Typographies : **Anton** (titres XXL, `.display`) + **Inter** (texte), auto-hébergées via `next/font`.

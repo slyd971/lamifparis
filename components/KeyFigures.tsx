@@ -46,7 +46,7 @@ export default function KeyFigures() {
           <span className="display text-[9vw] leading-none text-jaune sm:text-4xl lg:text-5xl">
             {conceptBadge.value}
           </span>
-          <span className="text-sm font-semibold uppercase tracking-[0.16em] text-cream/80 sm:text-base">
+          <span className="text-sm font-semibold uppercase tracking-[0.16em] text-cream/90 sm:text-base">
             {conceptBadge.label}
           </span>
         </Reveal>

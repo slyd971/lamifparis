@@ -42,9 +42,17 @@ export default function Navigation() {
             : "bg-transparent text-cream"
         }`}
       >
+        {/* Voile de lisibilité pour la nav posée sur la vidéo du Hero
+            (avant scroll). S'efface dès que le fond plein prend le relais. */}
+        <div
+          aria-hidden="true"
+          className={`pointer-events-none absolute inset-x-0 top-0 h-[160%] bg-gradient-to-b from-charbon/75 via-charbon/25 to-transparent transition-opacity duration-300 ${
+            scrolled || open ? "opacity-0" : "opacity-100"
+          }`}
+        />
         <nav
           aria-label="Navigation principale"
-          className="mx-auto flex h-[var(--header-h)] max-w-[1400px] items-center justify-between px-5 sm:px-8"
+          className="relative z-10 mx-auto flex h-[var(--header-h)] max-w-[1400px] items-center justify-between px-5 sm:px-8"
         >
           <Link
             href="/"
@@ -126,7 +134,7 @@ export default function Navigation() {
               onClick={() => setOpen(false)}
               className="flex items-baseline gap-4 border-b border-cream/10 py-4 transition-colors hover:text-jaune"
             >
-              <span className="font-sans text-xs tracking-[0.2em] text-cream/40 tabular-nums">
+              <span className="font-sans text-xs tracking-[0.2em] text-cream/55 tabular-nums">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="display block text-[2.75rem] leading-none">
