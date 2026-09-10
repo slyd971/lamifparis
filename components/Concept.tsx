@@ -11,8 +11,8 @@ export default function Concept() {
       aria-labelledby="concept-title"
     >
       <div className="mx-auto max-w-[1180px] px-5 py-[var(--section-pad)] sm:px-8">
-        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
-          <span className="h-px w-10 bg-jaune" />
+        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
+          <span className="h-px w-10 bg-corail" />
           {concept.kicker}
         </Reveal>
 
@@ -42,13 +42,13 @@ export default function Concept() {
               <span className="block text-base leading-relaxed text-cream/70">
                 {concept.pullLead}
               </span>
-              <span className="display mt-2 block text-[9vw] leading-[1.05] text-vermillon sm:text-[2.8rem] lg:text-[3.2rem]">
+              <span className="display mt-2 block text-[9vw] leading-[1.05] text-framboise sm:text-[2.8rem] lg:text-[3.2rem]">
                 {concept.pullQuote}
               </span>
             </Reveal>
 
             <Reveal>
-              <p className="border-t-2 border-vermillon pt-6 text-xl font-medium leading-snug text-jaune sm:text-[1.5rem]">
+              <p className="border-t-2 border-framboise pt-6 text-xl font-medium leading-snug text-cream sm:text-[1.5rem]">
                 {concept.closing}
               </p>
             </Reveal>

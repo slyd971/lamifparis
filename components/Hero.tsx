@@ -94,7 +94,7 @@ export default function Hero() {
 
         {/* Le nom "LA MIF" est déjà affiché juste au-dessus (h1) — on n'en
             garde que le reste ici pour éviter la répétition. */}
-        <p className="display text-[10vw] leading-[0.95] text-jaune sm:text-[7vw] lg:text-[5.5rem]">
+        <p className="display text-[10vw] leading-[0.95] text-corail sm:text-[7vw] lg:text-[5.5rem]">
           {brand.slogan.replace(brand.name, "").trim()}
         </p>
 
@@ -110,7 +110,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="#contact"
-            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune"
+            className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-corail"
           >
             {contact.cta}
           </a>

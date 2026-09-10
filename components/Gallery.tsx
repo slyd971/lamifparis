@@ -12,8 +12,8 @@ export default function Gallery() {
     >
       <div className="mx-auto max-w-[1500px] px-5 py-[var(--section-pad)] sm:px-8">
         <div className="mb-12 sm:mb-16">
-          <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
-            <span className="h-px w-10 bg-jaune" />
+          <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
+            <span className="h-px w-10 bg-corail" />
             Immersion
           </Reveal>
           <Reveal

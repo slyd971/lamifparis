@@ -15,8 +15,8 @@ export default function Testimonials() {
       className="bg-charbon text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
-        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
-          <span className="h-px w-10 bg-jaune" />
+        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
+          <span className="h-px w-10 bg-corail" />
           Ils en parlent
         </Reveal>
         <Reveal

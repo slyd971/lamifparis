@@ -124,7 +124,7 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="flex items-baseline gap-4 border-b border-cream/10 py-4 transition-colors hover:text-jaune"
+              className="flex items-baseline gap-4 border-b border-cream/10 py-4 transition-colors hover:text-corail"
             >
               <span className="font-sans text-xs tracking-[0.2em] text-cream/40 tabular-nums">
                 {String(i + 1).padStart(2, "0")}

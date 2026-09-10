@@ -53,8 +53,8 @@ export default function Experience() {
       className="bg-framboise text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
-        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
-          <span className="h-px w-10 bg-jaune" />
+        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
+          <span className="h-px w-10 bg-corail" />
           L&apos;expérience
         </Reveal>
         <Reveal
@@ -82,7 +82,7 @@ export default function Experience() {
             >
               <Media media={xp.media} />
               <div className="mt-4 flex items-baseline gap-2.5">
-                <span className="text-sm font-semibold text-jaune">
+                <span className="text-sm font-semibold text-corail">
                   {xp.index}
                 </span>
                 <h3 className="display text-xl leading-none sm:text-2xl">

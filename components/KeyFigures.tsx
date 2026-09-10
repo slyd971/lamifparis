@@ -15,7 +15,7 @@ export default function KeyFigures() {
         >
           En 3 ans,
           <br />
-          <span className="text-jaune">une communauté.</span>
+          <span className="text-corail">une communauté.</span>
         </Reveal>
 
         {/* Les 3 vraies données, alignées et lisibles d'un coup d'œil —
@@ -30,7 +30,7 @@ export default function KeyFigures() {
               <dd className="display text-[15vw] leading-[0.9] text-cream sm:text-[7vw] lg:text-[6.5rem]">
                 {fig.value}
               </dd>
-              <dt className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-jaune sm:text-base">
+              <dt className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-corail sm:text-base">
                 {fig.label}
               </dt>
             </Reveal>
@@ -41,9 +41,9 @@ export default function KeyFigures() {
             distinct des chiffres au-dessus. */}
         <Reveal
           delay={270}
-          className="mt-10 flex flex-col gap-2 border-t-2 border-jaune/70 pt-5 sm:mt-12 sm:flex-row sm:items-baseline sm:gap-6"
+          className="mt-10 flex flex-col gap-2 border-t-2 border-corail/70 pt-5 sm:mt-12 sm:flex-row sm:items-baseline sm:gap-6"
         >
-          <span className="display text-[9vw] leading-none text-jaune sm:text-4xl lg:text-5xl">
+          <span className="display text-[9vw] leading-none text-corail sm:text-4xl lg:text-5xl">
             {conceptBadge.value}
           </span>
           <span className="text-sm font-semibold uppercase tracking-[0.16em] text-cream/80 sm:text-base">

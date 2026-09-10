@@ -13,8 +13,8 @@ export default function Collaborations() {
       className="bg-charbon text-cream"
     >
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
-        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
-          <span className="h-px w-10 bg-jaune" />
+        <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-corail">
+          <span className="h-px w-10 bg-corail" />
           Collaborer
         </Reveal>
         <Reveal
@@ -22,7 +22,7 @@ export default function Collaborations() {
           id="collab-title"
           className="display mt-6 text-[13vw] leading-[1] sm:text-[8vw] lg:text-[5.5rem]"
         >
-          La Mif <span className="text-jaune">×</span> vous
+          La Mif <span className="text-corail">×</span> vous
         </Reveal>
         <Reveal
           as="p"
@@ -40,10 +40,10 @@ export default function Collaborations() {
               className="group grid grid-cols-1 gap-x-8 gap-y-2 border-b border-cream/15 py-7 sm:grid-cols-[0.9fr_1.1fr] sm:py-9"
             >
               <div className="flex items-baseline gap-4">
-                <span className="text-sm font-semibold text-jaune">
+                <span className="text-sm font-semibold text-corail">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="display text-3xl leading-none transition-colors duration-300 group-hover:text-jaune sm:text-4xl lg:text-5xl">
+                <h3 className="display text-3xl leading-none transition-colors duration-300 group-hover:text-corail sm:text-4xl lg:text-5xl">
                   {c.title}
                 </h3>
               </div>
@@ -57,7 +57,7 @@ export default function Collaborations() {
         <Reveal className="mt-10">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-jaune transition-opacity hover:opacity-70"
+            className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-corail transition-opacity hover:opacity-70"
           >
             {contact.cta}
             <span

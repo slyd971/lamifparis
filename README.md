@@ -66,7 +66,7 @@ components/
   Gallery.tsx       07 — Galerie immersive, aperçu (fond noir) + bouton vers /galerie
   GalleryGrid.tsx   Mosaïque en colonnes partagée par Gallery.tsx et app/galerie/page.tsx
   Testimonials.tsx  08 — Témoignages (masqué tant que vide, fond noir)
-  Contact.tsx       09 — Contact (fond framboise + marquee vermillon) — inclut le footer du site
+  Contact.tsx       09 — Contact (fond framboise + marquee corail) — inclut le footer du site
   Reveal.tsx        Apparition au scroll (IntersectionObserver + repli scroll)
   Marquee.tsx       Bandeau défilant CSS
 data/
@@ -77,7 +77,7 @@ public/media/
   video/            Vidéos + posters (hero, reel-1, reel-2, reel-3)
 ```
 
-Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec des sections **framboise** ; le vermillon reste réservé au Hero et aux accents.
+Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec des sections **framboise** ; le vermillon reste réservé au Hero, le corail aux accents (kickers, chiffres, hovers).
 
 ---
 
@@ -87,9 +87,9 @@ Identité visuelle : fond **noir** (`charbon`) majoritaire, en alternance avec d
 |---|---|---|
 | Fond principal (majoritaire) | `charbon` | `#171717` |
 | Sections en alternance | `framboise` | `#B31942` |
-| Couleur signature (Hero, accents) | `vermillon` | `#E34234` |
+| Couleur signature (Hero) | `vermillon` | `#E34234` |
 | Texte sur fond sombre / accent clair | `cream` | `#F3EBDD` |
-| Accent ponctuel | `jaune` | `#F4B942` |
+| Accent ponctuel | `corail` | `#FF9E83` |
 
 Modifiables dans `app/globals.css` (bloc `@theme`).
 Typographies : **Anton** (titres XXL, `.display`) + **Inter** (texte), auto-hébergées via `next/font`.

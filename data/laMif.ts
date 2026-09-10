@@ -137,7 +137,7 @@ export const concept = {
   pullLead: "Et quand vient le moment de turn up, La Mif sait faire.",
   pullQuote: "Sans le côté m'as-tu-vu. Juste la Mif.",
   /** Phrase de clôture, sur la communauté. */
-  closing: "Au fil de la nuit, les inconnus du début deviennent la Mif.",
+  closing: "On arrive inconnus. On repart en Mif.",
   image: {
     src: conceptBio,
     alt: "Quatre membres de la communauté LA MIF réunis devant le mur d'un événement",
