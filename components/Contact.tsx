@@ -46,20 +46,31 @@ export default function Contact() {
               {contact.subtitle}
             </Reveal>
 
-            {/* CTA principal — très identifiable. */}
-            {emailHref && (
-              <Reveal className="mt-8">
+            {/* Trois canaux, même poids visuel — uniquement ceux réellement
+                disponibles. */}
+            <Reveal className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              {emailHref && (
                 <a
                   href={emailHref}
-                  className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune hover:text-charbon sm:inline-flex sm:w-auto"
+                  className="flex w-full items-center justify-center gap-2 border border-cream/80 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10 sm:inline-flex sm:w-auto sm:min-w-[10.5rem]"
                 >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                    <path d="M3.5 6.5l8.5 6 8.5-6" />
+                  </svg>
                   {contact.emailCta}
                 </a>
-              </Reveal>
-            )}
+              )}
 
-            {/* Canaux secondaires — uniquement ceux réellement disponibles. */}
-            <Reveal className="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               {whatsappHref && (
                 <a
                   href={whatsappHref}
