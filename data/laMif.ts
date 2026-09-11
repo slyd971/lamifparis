@@ -18,6 +18,11 @@ import g15 from "@/assets/gallery/gallery-mif15.jpg";
 import conceptBio from "@/assets/gallery/concept-bio.jpg";
 import contactTeam from "@/assets/contact/team.jpg";
 import logoLaMif from "@/assets/logo/logo-la-mif-mark.png";
+import flyerSe3Ep1 from "@/assets/flyers/lamif-se3ep1-041025.jpg";
+import flyerOutsidePt2 from "@/assets/flyers/lamif-outside-pt2-130625.jpg";
+import flyerBirthday from "@/assets/flyers/lamif-2ans-birthday-030525.jpg";
+import flyerOldSchool from "@/assets/flyers/lamif-old-school-040425.jpg";
+import flyerChocolateFactory from "@/assets/flyers/lamif-chocolate-factory-091124.jpg";
 
 /* ================================================================== */
 /*  TYPES                                                              */
@@ -68,6 +73,17 @@ export type VideoItem = {
 export type GalleryItem = {
   src: StaticImageData;
   alt: string;
+};
+
+export type Flyer = {
+  src: StaticImageData;
+  alt: string;
+  /** Nom de l'édition, tel qu'imprimé sur l'affiche. */
+  edition: string;
+  /** Date confirmée, formatée pour l'affichage (ex. "13 juin 2025"). */
+  date: string;
+  /** Lieu confirmé — reprend le nom utilisé dans `venues`. */
+  venue: string;
 };
 
 export type Testimonial = {
@@ -258,6 +274,52 @@ export const venues: Venue[] = [
 ];
 
 /* ================================================================== */
+/*  06 ter — FLYERS DES ÉDITIONS                                       */
+/*  Uniquement des affiches réelles. Nom d'édition, date et lieu       */
+/*  proviennent du texte imprimé sur l'affiche elle-même — jamais      */
+/*  déduits. Ordre : éditions les plus récentes en premier. Rien ne    */
+/*  s'affiche tant que le tableau est vide (voir §_Contenus à fournir_).*/
+/* ================================================================== */
+
+export const flyers: Flyer[] = [
+  {
+    src: flyerSe3Ep1,
+    alt: "Affiche « SE3.EP1 » : portrait souriant en noir et blanc, grillz aux dents",
+    edition: "SE3.EP1",
+    date: "4 octobre 2025",
+    venue: "Nakama",
+  },
+  {
+    src: flyerOutsidePt2,
+    alt: "Affiche « Outside Pt2 Edition » : illustration d'un bateau et d'un phare sur fond de Paris",
+    edition: "Outside Pt2 Edition",
+    date: "13 juin 2025",
+    venue: "Bateau Phare",
+  },
+  {
+    src: flyerBirthday,
+    alt: "Affiche « 2-Years Birthday Bash » : portrait d'un DJ à lunettes de soleil",
+    edition: "2-Years Birthday Bash",
+    date: "3 mai 2025",
+    venue: "Nakama",
+  },
+  {
+    src: flyerOldSchool,
+    alt: "Affiche « Old School Edition » : illustration rétro avec radio-cassette vintage",
+    edition: "Old School Edition",
+    date: "4 avril 2025",
+    venue: "Nakama",
+  },
+  {
+    src: flyerChocolateFactory,
+    alt: "Affiche « Chocolate Factory Edition » : portrait sur fond chocolat",
+    edition: "Chocolate Factory Edition",
+    date: "9 novembre 2024",
+    venue: "Nakama",
+  },
+];
+
+/* ================================================================== */
 /*  08 — LA MIF × VOUS  (pistes de collaboration B2B)                  */
 /* ================================================================== */
 
@@ -361,9 +423,23 @@ export const socialLinks: SocialLinks = {
 /*  NAVIGATION                                                         */
 /* ================================================================== */
 
-export const navLinks = [
+export type NavLink = {
+  href: string;
+  label: string;
+  /**
+   * Lien ajouté au menu mobile dans tous les cas ; réservé aux écrans très
+   * larges (`lg`) en desktop pour ne jamais serrer/chevaucher la nav
+   * horizontale existante.
+   */
+  wideOnly?: boolean;
+};
+
+export const navLinks: NavLink[] = [
   { href: "/#concept", label: "Concept" },
   { href: "/#experience", label: "Expérience" },
+  ...(flyers.length > 0
+    ? [{ href: "/#flyers", label: "Flyers", wideOnly: true }]
+    : []),
   { href: "/#galerie", label: "Galerie" },
   { href: "/#collab", label: "Collab" },
   { href: "/#contact", label: "Contact" },

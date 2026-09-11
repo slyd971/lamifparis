@@ -63,6 +63,7 @@ components/
   Frame.tsx         Passe-partout partagé des photos/vidéos (filet + fond teinté, angles vifs)
   Artists.tsx       05 — Line-up (masqué tant que vide, fond noir)
   VideoSection.tsx  06 — Vidéos 9:16 (carrousel swipe mobile / grille desktop, fond noir)
+  Flyers.tsx        06 ter — Affiches des éditions, grille + lightbox (masqué tant que vide, fond noir)
   Gallery.tsx       07 — Galerie immersive, aperçu (fond noir) + bouton vers /galerie
   GalleryGrid.tsx   Mosaïque en colonnes partagée par Gallery.tsx et app/galerie/page.tsx
   Testimonials.tsx  08 — Témoignages (masqué tant que vide, fond noir)
@@ -72,6 +73,7 @@ components/
 data/
   laMif.ts          ⭐ TOUS les contenus éditoriaux centralisés ici
 assets/gallery/     Images de la galerie (import statique = dimensions + blur auto)
+assets/flyers/      Affiches des éditions (import statique = dimensions + blur auto)
 assets/logo/        Logo source
 public/media/
   video/            Vidéos + posters (hero, reel-1, reel-2, reel-3)
@@ -123,6 +125,25 @@ Typographies : **Anton** (titres XXL, `.display`) + **Inter** (texte), auto-héb
    toutes les photos de l'album, pas de sélection. Ajouter une photo à
    `galleryFull` (elle peut aussi figurer dans `gallery` pour l'aperçu, ou pas).
    Le bouton « Voir toute la galerie » en bas de l'aperçu y renvoie.
+
+### 🎫 Flyers des éditions (§06 ter)
+
+Section **masquée automatiquement** (elle et son lien de nav) tant que le tableau est vide.
+
+1. Déposer les affiches dans `assets/flyers/`.
+2. Dans `data/laMif.ts` :
+   ```ts
+   import monFlyer from "@/assets/flyers/mon-affiche.jpg";
+   // ...
+   export const flyers: Flyer[] = [
+     { src: monFlyer, alt: "Description accessible", edition: "…", date: "…", venue: "…" },
+   ];
+   ```
+`edition`, `date` et `venue` doivent reprendre uniquement ce qui est **confirmé** — en
+pratique, le texte imprimé sur l'affiche elle-même (jamais déduit d'un nom de fichier
+ou d'une supposition). Affiches réelles uniquement, non recadrées, non modifiées.
+Grille de 6 maximum, éditions les plus récentes en premier. Agrandissement au clic
+(lightbox maison : Échap, focus piégé, focus rendu à l'affiche d'origine).
 
 ### 🖼️ Photo du concept (§03)
 

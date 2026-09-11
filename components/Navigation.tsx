@@ -108,7 +108,10 @@ export default function Navigation() {
 
           <ul className="hidden items-center gap-8 text-sm font-medium uppercase tracking-[0.14em] md:flex">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li
+                key={link.href}
+                className={link.wideOnly ? "hidden lg:block" : undefined}
+              >
                 <a
                   href={link.href}
                   className="inline-block py-2 transition-opacity hover:opacity-60"

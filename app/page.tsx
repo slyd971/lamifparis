@@ -7,6 +7,7 @@ import Experience from "@/components/Experience";
 import Artists from "@/components/Artists";
 import VideoSection from "@/components/VideoSection";
 import TrustedBy from "@/components/TrustedBy";
+import Flyers from "@/components/Flyers";
 import Gallery from "@/components/Gallery";
 import Collaborations from "@/components/Collaborations";
 import Testimonials from "@/components/Testimonials";
@@ -28,6 +29,7 @@ export default function Home() {
         <Artists />
         <VideoSection />
         <TrustedBy />
+        <Flyers />
         <Gallery />
         <Collaborations />
         <Testimonials />
