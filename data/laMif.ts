@@ -18,6 +18,7 @@ import g15 from "@/assets/gallery/gallery-mif15.jpg";
 import conceptBio from "@/assets/gallery/concept-bio.jpg";
 import contactTeam from "@/assets/contact/team.jpg";
 import logoLaMif from "@/assets/logo/logo-la-mif-mark.png";
+import flyerFeteMusique from "@/assets/flyers/lamif-fete-musique-21juin.jpg";
 import flyerSe3Ep1 from "@/assets/flyers/lamif-se3ep1-041025.jpg";
 import flyerOutsidePt2 from "@/assets/flyers/lamif-outside-pt2-130625.jpg";
 import flyerBirthday from "@/assets/flyers/lamif-2ans-birthday-030525.jpg";
@@ -282,6 +283,16 @@ export const venues: Venue[] = [
 /* ================================================================== */
 
 export const flyers: Flyer[] = [
+  {
+    src: flyerFeteMusique,
+    alt: "Affiche « Fête de la Musique — Open Air Party » : typographie colorée aux couleurs rouge, jaune, vert sur fond de motifs africains",
+    edition: "Fête de la Musique — Open Air Party",
+    // Année non imprimée sur l'affiche (événement récurrent au Velvet Bar,
+    // voir `venues`) — on ne garde que ce qui est confirmé : le jour et le
+    // mois. La plus récente édition d'après le retour terrain.
+    date: "Dimanche 21 juin",
+    venue: "Velvet Bar",
+  },
   {
     src: flyerSe3Ep1,
     alt: "Affiche « SE3.EP1 » : portrait souriant en noir et blanc, grillz aux dents",
