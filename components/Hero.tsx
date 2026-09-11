@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { brand, contact, heroVideo, socialLinks } from "@/data/laMif";
+import { brand, collabCta, heroVideo, socialLinks } from "@/data/laMif";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -145,7 +145,7 @@ export default function Hero() {
             href="#contact"
             className="inline-flex min-w-[10.5rem] items-center justify-center gap-2 bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune hover:text-charbon"
           >
-            {contact.cta}
+            {collabCta}
           </a>
           {socialLinks.instagram && (
             <a

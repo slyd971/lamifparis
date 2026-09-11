@@ -117,13 +117,17 @@ Typographies : **Anton** (titres XXL, `.display`) + **Inter** (texte), auto-héb
    photo garde son format portrait d'origine, **aucun recadrage**. (Un
    portrait centré en breakout pleine largeur laisse de grandes bandes
    vides disgracieuses — évité volontairement.)
-   Garder une sélection courte (8-10 photos) pour un aperçu qui reste lisible —
-   c'est une mosaïque de preview, pas la galerie complète.
+   Limiter l'aperçu à 6 photos complémentaires (scènes différentes, pas de
+   doublon) pour qu'il reste lisible sans espace vide dans la grille (2 col.
+   mobile / 3 col. desktop) — c'est une mosaïque de preview, pas la galerie
+   complète.
    Les dimensions et le flou de chargement sont générés automatiquement (import statique).
 
    **Galerie complète** (`galleryFull` dans `data/laMif.ts`, page `/galerie`) :
-   toutes les photos de l'album, pas de sélection. Ajouter une photo à
-   `galleryFull` (elle peut aussi figurer dans `gallery` pour l'aperçu, ou pas).
+   toutes les photos de l'album, pas de sélection, tableau indépendant de
+   `gallery` (aucun média n'est retiré d'ici quand l'aperçu change). Ajouter
+   une nouvelle photo aux deux tableaux si elle doit apparaître partout, ou à
+   un seul sinon.
    Le bouton « Voir toute la galerie » en bas de l'aperçu y renvoie.
 
 ### 🎫 Flyers des éditions (§06 ter)
@@ -209,7 +213,7 @@ Un lien laissé vide s'affiche en « Lien à venir » (désactivé). `booking` a
 ### Chiffres clés / concept / expérience
 
 `keyFigures`, `concept`, `experiences` dans `data/laMif.ts`.
-⚠️ Les chiffres du brief ne doivent pas être modifiés (`+15`, `+5 000`, `25+`, `Concept unique`).
+⚠️ Les chiffres du brief ne doivent pas être modifiés sans confirmation (`+20`, `+5 000`, `25+`, `Notre signature`).
 
 ---
 

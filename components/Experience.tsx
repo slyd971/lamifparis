@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { experiences, type Experience as ExperienceType } from "@/data/laMif";
+import {
+  experiences,
+  experienceIntro,
+  type Experience as ExperienceType,
+} from "@/data/laMif";
 import Reveal from "@/components/Reveal";
 import Frame from "@/components/Frame";
 
@@ -68,8 +72,7 @@ export default function Experience() {
           as="p"
           className="mt-6 max-w-2xl text-base leading-relaxed text-cream/90 sm:text-lg"
         >
-          Jeux, karaoké, live et turn up : quatre temps forts d&apos;une même
-          soirée, du premier verre jusqu&apos;au dancefloor.
+          {experienceIntro}
         </Reveal>
 
         <ol className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:mt-16 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-6">

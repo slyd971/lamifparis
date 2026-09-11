@@ -53,7 +53,7 @@ export default function Contact() {
                   href={emailHref}
                   className="flex w-full items-center justify-center gap-2 bg-cream px-9 py-4 text-base font-semibold uppercase tracking-[0.14em] text-framboise transition-colors hover:bg-jaune hover:text-charbon sm:inline-flex sm:w-auto"
                 >
-                  {contact.cta}
+                  {contact.emailCta}
                 </a>
               </Reveal>
             )}

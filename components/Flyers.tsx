@@ -84,7 +84,7 @@ export default function Flyers() {
       <div className="mx-auto max-w-[1400px] px-5 py-[var(--section-pad)] sm:px-8">
         <Reveal className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-jaune">
           <span className="h-px w-10 bg-jaune" />
-          Les éditions
+          Une sélection de nos éditions
         </Reveal>
         <Reveal
           as="h2"

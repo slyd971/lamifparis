@@ -39,10 +39,7 @@ export default function Concept() {
             </Reveal>
 
             <Reveal className="py-2">
-              <span className="block text-base leading-relaxed text-cream/70">
-                {concept.pullLead}
-              </span>
-              <span className="display mt-2 block text-[9vw] leading-[1.05] text-vermillon sm:text-[2.8rem] lg:text-[3.2rem]">
+              <span className="display block text-[9vw] leading-[1.05] text-vermillon sm:text-[2.8rem] lg:text-[3.2rem]">
                 {concept.pullQuote}
               </span>
             </Reveal>
@@ -66,15 +63,22 @@ export default function Concept() {
 
 function ConceptImage() {
   return (
-    <Frame tone="light" ratio="4/5">
-      <Image
-        src={concept.image.src}
-        alt={concept.image.alt}
-        fill
-        sizes="(max-width: 1024px) 100vw, 40vw"
-        placeholder="blur"
-        className="object-cover"
-      />
-    </Frame>
+    <figure>
+      <Frame tone="light" ratio="4/5">
+        <Image
+          src={concept.image.src}
+          alt={concept.image.alt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 40vw"
+          placeholder="blur"
+          className="object-cover"
+        />
+      </Frame>
+      {concept.image.credit && (
+        <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-cream/50">
+          {concept.image.credit}
+        </figcaption>
+      )}
+    </figure>
   );
 }

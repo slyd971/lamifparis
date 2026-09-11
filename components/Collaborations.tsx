@@ -1,4 +1,4 @@
-import { collaborations, contact } from "@/data/laMif";
+import { collabCta, collaborations, collaborationsIntro } from "@/data/laMif";
 import Reveal from "@/components/Reveal";
 
 /**
@@ -28,7 +28,7 @@ export default function Collaborations() {
           as="p"
           className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80 sm:text-xl"
         >
-          La Mif peut aussi s&apos;imaginer avec vous.
+          {collaborationsIntro}
         </Reveal>
 
         <ul className="mt-12 border-t border-cream/15 sm:mt-16">
@@ -59,7 +59,7 @@ export default function Collaborations() {
             href="#contact"
             className="group inline-flex items-center gap-2 py-2 text-sm font-semibold uppercase tracking-[0.14em] text-jaune transition-opacity hover:opacity-70"
           >
-            {contact.cta}
+            {collabCta}
             <span
               aria-hidden="true"
               className="inline-block transition-transform group-hover:translate-x-1"
