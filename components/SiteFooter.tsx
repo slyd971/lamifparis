@@ -14,14 +14,14 @@ export default function SiteFooter() {
           {brand.name} — {brand.place} · depuis {brand.since}
         </span>
         <span>
-          Powered by{" "}
+          Press kit organisateur réalisé par{" "}
           <a
-            href="https://presskit.fr"
+            href="https://www.presskit.fr/organisateur"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-cream underline decoration-cream/40 underline-offset-4 transition-opacity hover:opacity-70"
           >
-            presskit.fr
+            PressKit For You
             <span className="sr-only"> (nouvel onglet)</span>
           </a>
         </span>
